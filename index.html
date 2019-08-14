@@ -22,6 +22,7 @@
             </div>
             <div class="right">
                 <div class="phone-wrap">
+                    <button class="hamburger hamburger--minus"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                     <a href="tel:89195356312">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
                         <span>+7(919) 535-63-12 </span>
@@ -222,15 +223,20 @@
     </div>
 </footer>
 <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
   crossorigin="anonymous"></script>
 <script>
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 0) {
-            $('header').addClass("slim");
-        } else {
-            $('header').removeClass("slim");
-        }
-    });
+    $(document).ready(function (){
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 0) {
+                $('header').addClass("slim");
+            } else {
+                $('header').removeClass("slim");
+            }
+        });
+        $('.hamburger').on('click', function (){
+            $(this).toggleClass('is-active');
+            $('header .link').slideToggle('fast');
+        })
+    })
 </script>
