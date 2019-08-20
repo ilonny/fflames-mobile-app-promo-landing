@@ -1,4 +1,7 @@
 $main-red: #ff494e;
+*{
+    box-sizing: border-box;
+}
 .hamburger {
     padding: 8px;
     display: inline-block;
@@ -731,7 +734,7 @@ section {
     }
 }
 footer {
-    padding: 60px 0;
+    padding: 30px 0;
     .content {
         display: flex;
         justify-content: space-between;
@@ -754,21 +757,29 @@ footer {
         font-size: 14px;
         color: #219bff;
     }
-    @media screen and (max-width: 800px){
+    .logo{
+        max-width: 200px;
+    }
+    @media screen and (max-width: 800px) {
         padding: 30px 0;
-        .content{
+        .content {
             flex-wrap: wrap;
             justify-content: center;
-            &>* {
+            & > * {
                 flex: 1 1 100%;
                 text-align: center;
             }
-            .request-order-btn{
+            // .request-order-btn {
+            //     order: 1;
+            //     margin: 15px 0;
+            //     max-width: 250px;
+            // }
+            .logo {
                 order: 1;
                 margin: 15px 0;
-                max-width: 250px;
+                max-width: 150px;
             }
-            .copy{
+            .copy {
                 order: 3;
             }
         }
@@ -798,4 +809,54 @@ footer {
         left: 0;
         transform: translate3d(34px, 0px, 0px) rotate(45deg);
     }
+}
+.section-form {
+    .content {
+        max-width: 680px;
+        h2,
+        h4 {
+            text-align: center;
+        }
+        h4{
+            font-weight: 300;
+        }
+        form {
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            .form-group{
+                margin-bottom: 15px;
+                &:nth-last-child(1){
+                    margin-bottom: 0;
+                }
+                label{
+                    font-weight: 300;
+                    font-size: 14px;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                input{
+                    display: block;
+                    border: 1px solid #ececec;
+                    border-radius: 3px;
+                    width: 100%;
+                    height: 28px;
+                    padding-left: 10px;
+                }
+                textarea{
+                    @extend input;
+                    padding: 10px;
+                    height: 150px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+#send-form{
+    display: block;
+    margin: auto;
+    @extend .request-order-btn;
+    font-size: 18px;
+    padding: 10px 30px;
 }
